@@ -1,0 +1,7 @@
+#app{
+  border:2px solid white;
+}
+#taskListManager{
+  min-height: calc(100vh - 300px);
+  display: flex;
+}
