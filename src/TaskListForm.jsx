@@ -29,8 +29,8 @@ export default class TaskListForm extends Component {
     return (
       <div>
        
-        <label htmlFor="name">Enter name</label>
-        <input type="text" id='name' value={this.state.name} onChange={this.handleChange} onKeyDown={this.handleEnter}/>
+        
+        <input type="text" id='name' value={this.state.name} placeholder='Enter list title' onChange={this.handleChange} onKeyDown={this.handleEnter}/>
 
       </div>
     )

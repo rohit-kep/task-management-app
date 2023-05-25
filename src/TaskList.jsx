@@ -16,13 +16,15 @@ class TaskList extends Component {
     this.setState({changed:!this.state.changed})
     this.props.changeState()
  }
+ 
     render() {
   
         const name = this.props.name
         const {tasks} = this.context
-
-        return (
+        
+          return (
             <div className='taskList'>
+                
                 <h3>{name}</h3>
                 {
                     tasks.map((item,index)=>{

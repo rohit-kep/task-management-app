@@ -33,11 +33,32 @@ class TaskCard extends Component {
 
     //updation related code
     handleInput = (e)=>{
-        console.log(e.target.className )
+        if(e.target.className == 'title'){
+            this.setState({updateTitle:e.target.textContent})
+        }
+        else if(e.target.className == 'description'){
+            this.setState({updateDescription:e.target.textContent})
+        }
     }
 
-    handleBlur = (e)=>{
-        console.log(e.target)
+    handleBlur = ()=>{
+        const {tasks,updateTask} = this.context
+        const data = []
+        
+        if(this.state.title !== this.state.updateTitle){
+            data.push( this.state.updateTitle)
+        }else{
+            data.push(this.state.title)
+        }
+        if(this.state.description !== this.state.updateDescription){
+            data.push(this.state.updateDescription)
+        }
+        
+        //findin the index
+        const index = tasks.findIndex(item => item.title === this.state.title)
+        updateTask(index,data[0],data[1])
+        
+        this.setState({title:this.state.updateTitle,description:this.state.updateDescription})
     }
 
     render() {
