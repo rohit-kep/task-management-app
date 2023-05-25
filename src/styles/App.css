@@ -1,7 +1,16 @@
-#app{
-  border:2px solid white;
-}
+
 #taskListManager{
   min-height: calc(100vh - 300px);
   display: flex;
+}
+.taskCard{
+  padding:.4rem;
+  background: slategray;
+  width: 250px;
+  height:150px;
+  overflow: auto;
+}
+.taskCard > :nth-child(1){
+  font-size: 1.2em;
+  padding-bottom: 10px;
 }

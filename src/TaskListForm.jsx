@@ -7,35 +7,31 @@ export default class TaskListForm extends Component {
   constructor(props){
     super(props)
     this.state = {
-      id:'',
       name:''
     }
   }
 
   handleChange = (e)=>{
-      if(e.target.id == 'id'){
-        this.setState({id:e.target.value})
-      }
-      else if(e.target.id == 'name'){
         this.setState({name:e.target.value})
-      }
+        
  }  
-  handleClick = ()=>{
-    const {addTaskList} = this.context
-    const x   = this.state.id, y  =this.state.name
+ handleEnter = (e)=>{
+    if(e.key === 'Enter'){
+      const {addTaskList} = this.context
+    const data = this.state
 
-    addTaskList({x,y})
-    this.setState({id:'',name:''})
-  }
+    addTaskList(data)
+    this.setState({name:''})
+    }
+ }
   render() {
     
     return (
       <div>
-        <label htmlFor="id">Enter Id</label>
-        <input type="text" id='id' value={this.state.id} onChange={this.handleChange}/>
+       
         <label htmlFor="name">Enter name</label>
-        <input type="text" id='name' value={this.state.name} onChange={this.handleChange} />
-        <button onClick={this.handleClick}>click</button>
+        <input type="text" id='name' value={this.state.name} onChange={this.handleChange} onKeyDown={this.handleEnter}/>
+
       </div>
     )
   }

@@ -9,14 +9,18 @@ export const TaskProvider = ({ children }) => {
   // Function to add a new task list
   const addTaskList = (newTaskList) => {
     setTaskLists([...taskList, newTaskList]);
-    console.log(taskList)
+  
   };
 
   const addTasks = (newTask) =>{
         setTasks([...tasks,newTask])
-        console.log(tasks)
+  
   }
   
+  const changeList = (index,value)=>{
+    tasks[index].listName = value
+    
+  }
 
   // Other functions to manage the state
 
@@ -25,6 +29,7 @@ export const TaskProvider = ({ children }) => {
     tasks,
     addTasks,
     addTaskList,
+    changeList
     // Include other functions in the context value
   };
 
