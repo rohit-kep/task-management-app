@@ -2,6 +2,7 @@ import TaskListForm from './TaskListForm'
 import TaskListManager from './TaskListManager'
 import './styles/App.css'
 import { TaskProvider } from './TaskContext'
+import ExcelExportButton from './ExcelExportButton'
 function App() {
 
 
@@ -10,8 +11,8 @@ function App() {
       <TaskProvider>
       <TaskListManager></TaskListManager>
       <TaskListForm></TaskListForm>
+      <ExcelExportButton></ExcelExportButton>
       </TaskProvider>
-      
   
     </div>
   )
