@@ -29,13 +29,11 @@ class TaskForm extends Component {
     }
     render() {
         return (
-            <div>
-                <label htmlFor="title">Enter Title</label>         
-                <input type="text" id='title' value={this.state.title} onChange={this.handleChange}/>
-                <label htmlFor="description">Enter description</label>
-                <textarea name="description" id="description" cols="30" rows="10" value={this.state.description} onChange={this.handleChange}></textarea>
-                <label htmlFor="listName">Enter the taskList</label>
-                <input type="text" id='listName' value={this.state.listName} onChange={this.handleChange}/>
+            <div id='taskForm'>
+                
+                <input type="text" id='title' value={this.state.title} placeholder='Enter Title' onChange={this.handleChange}/>
+                <textarea name="description" id="description" placeholder='Enter description' cols="30" rows="10" value={this.state.description} onChange={this.handleChange}></textarea>
+                <input type="text" id='listName' placeholder='Enter the taskList' value={this.state.listName} onChange={this.handleChange}/>
                 <button onClick={this.handleSubmit}>press</button>
             </div>
         );

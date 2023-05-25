@@ -1,16 +1,56 @@
 
 #taskListManager{
-  min-height: calc(100vh - 300px);
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(24, 19, 58);
   display: flex;
+  gap:1em;
+
+}
+.taskList{
+  padding:.5em;
+  border-radius: 1em;
+  max-width: 375px;
+  min-width:375px;
+  background: rgba(105, 90, 205, 0.685);  
+  display: flex;
+  flex-direction: column;
+  gap:1em
+  
+}
+.taskList > h3{
+  padding:.5rem;
+  color: gold;
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 2px solid gold;
 }
 .taskCard{
   padding:.4rem;
-  background: slategray;
-  width: 250px;
+  background: rgb(15, 8, 59);
+  width: 100%;
   height:150px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  color:white;
 }
+.taskCard p{
+  font-size: .8em;
+}
+
 .taskCard > :nth-child(1){
   font-size: 1.2em;
   padding-bottom: 10px;
+}
+
+#taskForm{
+  display:flex;
+  flex-direction: column;
+  gap: .3em;
+}
+
+#taskForm input{
+  border:none;
+  padding:1rem;
 }

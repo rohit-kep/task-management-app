@@ -21,13 +21,12 @@ class TaskList extends Component {
         const name = this.props.name
         const {tasks} = this.context
 
-    
         return (
-            <div>
+            <div className='taskList'>
                 <h3>{name}</h3>
                 {
                     tasks.map((item,index)=>{
-                        if(item.listName === name){
+                        if(item.listName.trim() === name.trim()){
                             
                             return <TaskCard key={item.title+index} data ={item} changeState = {this.changeState}></TaskCard>
                         }

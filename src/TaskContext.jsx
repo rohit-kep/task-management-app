@@ -18,10 +18,31 @@ export const TaskProvider = ({ children }) => {
   }
   
   const changeList = (index,value)=>{
-    tasks[index].listName = value
-    
+    const arr = tasks
+    arr[index].listName = value
+    setTasks(arr)
   }
 
+  const deleteTask = (title)=>{
+    const arr = tasks.filter(item=> item.title !== title)
+    setTasks(arr)
+    
+  }
+  const updateTask = (index,...data)=>{
+    const arr = tasks
+
+    data.forEach(Element =>{
+      const propertyToUpdate = Object.keys(Element).pop()
+      const newValue = Object.values(Element).pop()
+
+      if(arr[index] && arr[index].hasOwnProperty(propertyToUpdate)){
+        arr[index][propertyToUpdate] = newValue
+      }
+    })
+    
+    
+
+  }
   // Other functions to manage the state
 
   const contextValue = {
@@ -29,7 +50,9 @@ export const TaskProvider = ({ children }) => {
     tasks,
     addTasks,
     addTaskList,
-    changeList
+    changeList,
+    deleteTask,
+    updateTask
     // Include other functions in the context value
   };
 
